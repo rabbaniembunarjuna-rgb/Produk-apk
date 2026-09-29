@@ -3,8 +3,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produk AXO</title>
-<link rel="icon" type="image/jpeg" href="https://files.catbox.moe/vxisbp.jpg">
-<link rel="apple-touch-icon" href="https://files.catbox.moe/vxisbp.jpg">
+<link rel="icon" type="image/jpeg" href="https://files.catbox.moe/jikdj7.jpg">
+<link rel="apple-touch-icon" href="https://files.catbox.moe/jikdj7.jpg">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
 
@@ -708,7 +708,7 @@
 
 <div class="loader done" id="loader">
   <div class="loader-logo">
-    <img src="https://files.catbox.moe/vxisbp.jpg" alt="Loading AXO">
+    <img src="https://files.catbox.moe/jikdj7.jpg" alt="Loading AXO">
   </div>
   <div class="loader-title">Produk AXO</div>
   <div class="loader-sub">Memuat Halaman...</div>
@@ -720,7 +720,7 @@
   <header class="head reveal">
     <div class="brand">
       <div class="brand-logo">
-        <img src="https://files.catbox.moe/vxisbp.jpg" alt="AXO">
+        <img src="https://files.catbox.moe/jikdj7.jpg" alt="AXO">
       </div>
       <div>
         <h1>Produk AXO</h1>
@@ -785,6 +785,7 @@
 
     <div class="scroller" id="scroller">
 
+      <!-- Card XIXTER -->
       <article class="card">
         <div class="thumb">
           <span class="badge top">
@@ -824,9 +825,44 @@ Utilites Dll'</p>
         </div>
       </article>
 
+      <!-- Card XEVO -->
+      <article class="card">
+        <div class="thumb">
+          <span class="badge hot">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 13.6 7 17.2l1.9-5.8L4 7.8h6.1z"></path></svg>
+            HOT
+          </span>
+          <img src="https://files.catbox.moe/imxp0p.jpg" alt="XEVO" loading="lazy">
+        </div>
+        <h2 class="title">XEVO</h2>
+        <p class="desc">PRICE APK BUG XEVO
+
+Member
+'1Bulan :30.000'
+Permanen :50.000
+
+Reseller
+'1Bulan :70.000'
+Permanen :100.000
+
+VIP
+'1Bulan :120.000'
+1Tahun :150.000</p>
+        <div class="actions">
+          <button class="btn ghost" onclick="openPreviewXevo()">Preview</button>
+          <button class="btn primary" onclick="openPrice2()">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
+            Buy
+          </button>
+        </div>
+      </article>
+
     </div>
 
-    <div class="dots-wrap" id="dots"><button class="pdot active" aria-label="Produk XIXTER"></button></div>
+    <div class="dots-wrap" id="dots">
+      <button class="pdot active" aria-label="Produk XIXTER"></button>
+      <button class="pdot" aria-label="Produk XEVO"></button>
+    </div>
   </section>
 
   <section class="channels-sec reveal">
@@ -938,6 +974,7 @@ Utilites Dll'</p>
 <script>
 const VIDEO_URL = "https://cdn.videotourl.net/videos/a8302c19-df09-4818-b8a7-9d6428b47163.mp4";
 const TUTORIAL_URL = "https://files.catbox.moe/kll7pi.mp4";
+const VIDEO_XEVO = "https://files.catbox.moe/8x7o0g.mp4";
 
 const PRODUK = {
   bulan: {
@@ -955,6 +992,61 @@ const PRODUK = {
     masa    : "Permanent",
     harga   : "Rp25.000",
     chat    : "Min, saya telah menyelesaikan pembayaran XIXTER Permanent"
+  }
+};
+
+/* Data XEVO */
+const PRODUK2 = {
+  barang: "XEVO",
+  paket: {
+    member1b: {
+      nominal : "Rp30.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "Member",
+      masa    : "1 Bulan",
+      harga   : "Rp30.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO Member 1 Bulan"
+    },
+    memberperm: {
+      nominal : "Rp50.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "Member",
+      masa    : "Permanent",
+      harga   : "Rp50.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO Member Permanent"
+    },
+    reseller1b: {
+      nominal : "Rp70.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "Reseller",
+      masa    : "1 Bulan",
+      harga   : "Rp70.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO Reseller 1 Bulan"
+    },
+    resellerperm: {
+      nominal : "Rp100.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "Reseller",
+      masa    : "Permanent",
+      harga   : "Rp100.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO Reseller Permanent"
+    },
+    vip1b: {
+      nominal : "Rp120.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "VIP",
+      masa    : "1 Bulan",
+      harga   : "Rp120.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO VIP 1 Bulan"
+    },
+    vip1t: {
+      nominal : "Rp150.000",
+      qris    : "https://files.catbox.moe/pae4dd.png",
+      role    : "VIP",
+      masa    : "1 Tahun",
+      harga   : "Rp150.000",
+      chat    : "Min, saya telah menyelesaikan pembayaran XEVO VIP 1 Tahun"
+    }
   }
 };
 
@@ -1122,76 +1214,35 @@ function openPrice(){
 }
 function closePrice(){ hide("ovPrice"); }
 
-function openPrice3(){
-  const p = PRODUK3.paket;
+function openPrice2(){
+  const p = PRODUK2.paket;
   document.getElementById("priceBody").innerHTML = `
     <p class="pl-cat">Member</p>
     <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.member.nama}</span><span class="pl-price">${p.member.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS3('member')">Bayar</button>
+      <div class="pl-info"><span class="pl-name">1 Bulan</span><span class="pl-price">${p.member1b.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('member1b')">Bayar</button>
+    </div>
+    <div class="pl-row">
+      <div class="pl-info"><span class="pl-name">Permanent</span><span class="pl-price">${p.memberperm.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('memberperm')">Bayar</button>
     </div>
     <p class="pl-cat">Reseller</p>
     <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.reseller.nama}</span><span class="pl-price">${p.reseller.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS3('reseller')">Bayar</button>
-    </div>
-    <p class="pl-cat">Partner</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.partner.nama}</span><span class="pl-price">${p.partner.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS3('partner')">Bayar</button>
-    </div>
-  `;
-  show("ovPrice");
-}
-
-function openPrice4(){
-  const p = PRODUK4.paket;
-  document.getElementById("priceBody").innerHTML = `
-    <p class="pl-cat">Member</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.member.nama}</span><span class="pl-price">${p.member.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS4('member')">Bayar</button>
-    </div>
-  `;
-  show("ovPrice");
-}
-
-function openPrice5(){
-  const p = PRODUK5.paket;
-  document.getElementById("priceBody").innerHTML = `
-    <p class="pl-cat">Member</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.m1.nama}</span><span class="pl-price">${p.m1.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('m1')">Bayar</button>
+      <div class="pl-info"><span class="pl-name">1 Bulan</span><span class="pl-price">${p.reseller1b.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('reseller1b')">Bayar</button>
     </div>
     <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.mperm.nama}</span><span class="pl-price">${p.mperm.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('mperm')">Bayar</button>
+      <div class="pl-info"><span class="pl-name">Permanent</span><span class="pl-price">${p.resellerperm.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('resellerperm')">Bayar</button>
     </div>
     <p class="pl-cat">VIP</p>
     <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.vip.nama}</span><span class="pl-price">${p.vip.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('vip')">Bayar</button>
+      <div class="pl-info"><span class="pl-name">1 Bulan</span><span class="pl-price">${p.vip1b.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('vip1b')">Bayar</button>
     </div>
-    <p class="pl-cat">Reseller</p>
     <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.reseller.nama}</span><span class="pl-price">${p.reseller.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('reseller')">Bayar</button>
-    </div>
-    <p class="pl-cat">Admin</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.admin.nama}</span><span class="pl-price">${p.admin.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('admin')">Bayar</button>
-    </div>
-    <p class="pl-cat">Partner</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.partner.nama}</span><span class="pl-price">${p.partner.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('partner')">Bayar</button>
-    </div>
-    <p class="pl-cat">Owner</p>
-    <div class="pl-row">
-      <div class="pl-info"><span class="pl-name">${p.owner.nama}</span><span class="pl-price">${p.owner.harga}</span></div>
-      <button class="btn primary sm" onclick="openQRIS5('owner')">Bayar</button>
+      <div class="pl-info"><span class="pl-name">1 Tahun</span><span class="pl-price">${p.vip1t.harga}</span></div>
+      <button class="btn primary sm" onclick="openQRIS2('vip1t')">Bayar</button>
     </div>
   `;
   show("ovPrice");
@@ -1230,27 +1281,6 @@ function openQRIS(tipe){
 
 function openQRIS2(key){
   const p = Object.assign({}, PRODUK2.paket[key], { barang: PRODUK2.barang });
-  document.getElementById("qrisBody").innerHTML = buildQRISHTML(p);
-  closePrice();
-  show("ovQris");
-}
-
-function openQRIS3(key){
-  const p = Object.assign({}, PRODUK3.paket[key], { barang: PRODUK3.barang });
-  document.getElementById("qrisBody").innerHTML = buildQRISHTML(p);
-  closePrice();
-  show("ovQris");
-}
-
-function openQRIS4(key){
-  const p = Object.assign({}, PRODUK4.paket[key], { barang: PRODUK4.barang });
-  document.getElementById("qrisBody").innerHTML = buildQRISHTML(p);
-  closePrice();
-  show("ovQris");
-}
-
-function openQRIS5(key){
-  const p = Object.assign({}, PRODUK5.paket[key], { barang: PRODUK5.barang });
   document.getElementById("qrisBody").innerHTML = buildQRISHTML(p);
   closePrice();
   show("ovQris");
@@ -1350,13 +1380,7 @@ document.addEventListener("keydown", e => {
 window.addEventListener("resize", updateActive);
 </script>
 
-
-
-
-
-
-
-
+<!-- Preview XIXTER -->
 <div id="ovPreview" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.82);align-items:center;justify-content:center;padding:16px;">
   <div style="position:relative;width:min(900px,100%);max-height:90vh;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px;box-sizing:border-box;">
     <button type="button" onclick="closePreview()" style="position:absolute;right:10px;top:8px;z-index:2;width:36px;height:36px;border:0;border-radius:50%;background:#222;color:#fff;font-size:24px;cursor:pointer;">×</button>
@@ -1392,6 +1416,45 @@ document.addEventListener('keydown', function(e){
 });
 document.getElementById('ovPreview')?.addEventListener('click', function(e){
   if (e.target === this) closePreview();
+});
+</script>
+
+<!-- Preview XEVO -->
+<div id="ovPreviewXevo" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.82);align-items:center;justify-content:center;padding:16px;">
+  <div style="position:relative;width:min(900px,100%);max-height:90vh;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px;box-sizing:border-box;">
+    <button type="button" onclick="closePreviewXevo()" style="position:absolute;right:10px;top:8px;z-index:2;width:36px;height:36px;border:0;border-radius:50%;background:#222;color:#fff;font-size:24px;cursor:pointer;">×</button>
+    <div style="color:#fff;font-weight:700;font-size:18px;margin:4px 42px 14px 4px;">Preview XEVO</div>
+    <video id="previewVideoXevo" controls playsinline preload="metadata" style="display:block;width:100%;max-height:75vh;border-radius:12px;background:#000;">
+      <source src="https://files.catbox.moe/isf77x.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+  </div>
+</div>
+<script>
+function openPreviewXevo(){
+  const ov = document.getElementById('ovPreviewXevo');
+  const video = document.getElementById('previewVideoXevo');
+  if (!ov || !video) return;
+  ov.style.display = 'flex';
+  ov.setAttribute('aria-hidden','false');
+  video.currentTime = 0;
+  video.load();
+  video.play().catch(function(){});
+}
+function closePreviewXevo(){
+  const ov = document.getElementById('ovPreviewXevo');
+  const video = document.getElementById('previewVideoXevo');
+  if (video) video.pause();
+  if (ov) {
+    ov.style.display = 'none';
+    ov.setAttribute('aria-hidden','true');
+  }
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closePreviewXevo();
+});
+document.getElementById('ovPreviewXevo')?.addEventListener('click', function(e){
+  if (e.target === this) closePreviewXevo();
 });
 </script>
 
